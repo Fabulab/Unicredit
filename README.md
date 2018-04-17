@@ -36,8 +36,8 @@ $uc = new Unicredit([
     'currency' => 'EUR',
     'lang' => 'IT',
     'base_url' => 'https://testuni.netsw.it',
-    'verify' => 'http://localhost/verify.php',
-    'error' => 'http://localhost/error.php'
+    'verify_url' => 'http://localhost/verify.php',
+    'error_url' => 'http://localhost/error.php'
 ]);
 
 
@@ -65,7 +65,7 @@ if (!$response->error) {
     # Save $order_id and $transaction_id in DB or Cookie in order to retrieve in the next page
 
     # Redirect to the checkout
-    $uc->redirect_url;
+    $response->redirect_url;
 
 }else{
 	
